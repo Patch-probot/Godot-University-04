@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://brgpjilf7s2ul" path="res://pistol/muzzle_flash/muzzle_flash.png" id="2_6pgu4"]
 
 [node name="MuzzleFlash" type="Node2D"]
+top_level = true
 script = ExtResource("1_wouey")
 
 [node name="Sprite" type="Sprite2D" parent="."]

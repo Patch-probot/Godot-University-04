@@ -1,10 +1,76 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4h2inm6wddrv"]
+[gd_scene load_steps=4 format=3 uid="uid://b4h2inm6wddrv"]
 
-[ext_resource type="PackedScene" uid="uid://cymw21ld8ow68" path="res://scenes/character_controller.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cymw21ld8ow68" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bae77u4ec0f0s" path="res://scenes/mob.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dxfb4hs38s462" path="res://scenes/pine_tree.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 
-[node name="CharacterController" parent="." instance=ExtResource("1_o5qli")]
-speed = 600
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
-[editable path="CharacterController"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(920, 584)
+
+[node name="Mob" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(382, 599)
+
+[node name="Mob2" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(2414, 638)
+
+[node name="Mob3" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(812, 1591)
+
+[node name="Mob4" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(812, 1591)
+
+[node name="Mob5" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(812, 1591)
+
+[node name="Mob6" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(812, 1591)
+
+[node name="Mob7" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(812, 1591)
+
+[node name="Mob8" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(812, 1591)
+
+[node name="Mob9" parent="." instance=ExtResource("1_sugp2")]
+y_sort_enabled = true
+position = Vector2(812, 1591)
+
+[node name="Trees" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="PineTree" parent="Trees" instance=ExtResource("2_0wfyh")]
+position = Vector2(447, 260)
+
+[node name="PineTree2" parent="Trees" instance=ExtResource("2_0wfyh")]
+position = Vector2(355, 826)
+
+[node name="PineTree3" parent="Trees" instance=ExtResource("2_0wfyh")]
+position = Vector2(1619, 456)
+
+[node name="PineTree4" parent="Trees" instance=ExtResource("2_0wfyh")]
+position = Vector2(1535, 812)
+
+[node name="PineTree5" parent="Trees" instance=ExtResource("2_0wfyh")]
+position = Vector2(1423, 952)
+
+[node name="PineTree6" parent="Trees" instance=ExtResource("2_0wfyh")]
+position = Vector2(1659, 930)

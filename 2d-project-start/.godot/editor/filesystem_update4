@@ -1,3 +1,17 @@
 res://scenes/character_controller.tscn
 res://scripts/player.gd
 res://scenes/main.tscn
+res://trees/pine_tree.tscn
+res://characters/happy_boo/happy_boo.tscn
+res://scripts/mob.gd
+res://scenes/player.tscn
+res://characters/slime/mob.tscn
+res://scenes/mob.tscn
+res://scenes/pine_tree.tscn
+res://scenes/gun.tscn
+res://scenes/gun.gd
+res://bullet.gd
+res://scenes/bullet.tscn
+res://scripts/gun.gd
+res://scripts/bullet.gd
+res://pistol/muzzle_flash/muzzle_flash.tscn

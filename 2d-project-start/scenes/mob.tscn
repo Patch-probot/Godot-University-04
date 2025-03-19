@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bae77u4ec0f0s"]
+
+[ext_resource type="Script" uid="uid://cwifpjkpw75s5" path="res://scripts/mob.gd" id="1_ftysp"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_jrihd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsing"]
+radius = 35.0143
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsing"]
+radius = 26.0
+height = 108.0
+
+[node name="Mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+slide_on_ceiling = false
+wall_min_slide_angle = 0.0
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_block_on_wall = false
+floor_max_angle = 0.0
+platform_on_leave = 2
+platform_floor_layers = 4294967042
+platform_wall_layers = 1
+safe_margin = 0.001
+script = ExtResource("1_ftysp")
+distance_buffer = 75
+
+[node name="Slime" parent="." instance=ExtResource("1_jrihd")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -26)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_bsing")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bsing")
