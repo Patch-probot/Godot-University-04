@@ -1,11 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://cymw21ld8ow68"]
+[gd_scene load_steps=9 format=3 uid="uid://cymw21ld8ow68"]
 
 [ext_resource type="Script" uid="uid://dlohlpu0xlwr1" path="res://scripts/player.gd" id="1_wpkyv"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_q780c"]
 [ext_resource type="PackedScene" uid="uid://csxl5bfa33pjp" path="res://scenes/gun.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://thm36imx6ymp" path="res://scenes/axe.tscn" id="4_dqkch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpkyv"]
 radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 39.0128
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(1, 0.305882, 0.188235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.999997, 0.304834, 0.186767, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+anti_aliasing_size = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
+bg_color = Color(0.272615, 0.83947, 1.15514e-06, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27451, 0.839216, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+anti_aliasing_size = 2.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -30,5 +64,29 @@ shape = SubResource("CircleShape2D_wpkyv")
 
 [node name="Gun" parent="." instance=ExtResource("3_qhqgy")]
 position = Vector2(0, -59)
+
+[node name="Axe" parent="." instance=ExtResource("4_dqkch")]
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_qhqgy")
+debug_color = Color(0.959216, 0.187354, 0.203813, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+z_index = 2
+offset_left = -56.0
+offset_top = -145.0
+offset_right = 56.0
+offset_bottom = -124.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qhqgy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqkch")
+value = 100.0
+show_percentage = false
 
 [editable path="HappyBoo"]

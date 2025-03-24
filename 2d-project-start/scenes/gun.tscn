@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_x77fm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
-radius = 649.077
+radius = 650.0
 
 [node name="Gun" type="Area2D"]
 z_index = 1
@@ -12,8 +12,91 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_og67c")
 
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Area1" type="Area2D" parent="Areas"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Areas/Area1"]
+position = Vector2(-356.822, -325)
+scale = Vector2(1.41167, 1)
+polygon = PackedVector2Array(252.766, 325, -207.681, 325, -156.678, -254)
+
+[node name="Area2" type="Area2D" parent="Areas"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Areas/Area2"]
+position = Vector2(-356.822, -325)
+scale = Vector2(1.41167, 1)
+polygon = PackedVector2Array(252.766, 326, 252.766, -325, -156.678, -254)
+
+[node name="Area3" type="Area2D" parent="Areas"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Areas/Area3"]
+position = Vector2(-356.822, -325)
+scale = Vector2(1.41167, 1)
+polygon = PackedVector2Array(252.766, 326, 252.766, -325, 664.334, -250)
+
+[node name="Area4" type="Area2D" parent="Areas"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Areas/Area4"]
+position = Vector2(-356.822, -325)
+scale = Vector2(1.41167, 1)
+polygon = PackedVector2Array(252.057, 326, 713.212, 325, 664.334, -250)
+
+[node name="Area5" type="Area2D" parent="Areas"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Areas/Area5"]
+position = Vector2(-356.822, -325)
+scale = Vector2(1.41167, 1)
+polygon = PackedVector2Array(252.766, 325, 713.212, 325, 662.917, 905)
+
+[node name="Area6" type="Area2D" parent="Areas"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Areas/Area6"]
+position = Vector2(-356.822, -325)
+scale = Vector2(1.41167, 1)
+polygon = PackedVector2Array(252.766, 325, 252.766, 975, 662.917, 905)
+
+[node name="Area7" type="Area2D" parent="Areas"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Areas/Area7"]
+position = Vector2(-356.822, -325)
+scale = Vector2(1.41167, 1)
+polygon = PackedVector2Array(252.766, 325, 252.766, 975, -154.552, 898)
+
+[node name="Area8" type="Area2D" parent="Areas"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Areas/Area8"]
+position = Vector2(-356.822, -325)
+scale = Vector2(1.41167, 1)
+polygon = PackedVector2Array(252.766, 325, -207.681, 325, -154.552, 898)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_og67c")
+debug_color = Color(0.487001, 0.578926, 0.251642, 0.42)
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
@@ -30,7 +113,7 @@ unique_name_in_owner = true
 position = Vector2(25, 10)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.1
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

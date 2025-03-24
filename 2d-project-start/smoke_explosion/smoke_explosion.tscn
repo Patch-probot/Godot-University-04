@@ -6,7 +6,7 @@
 [sub_resource type="Gradient" id="Gradient_obal6"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0.105691, 0.7)
-colors = PackedColorArray(0.878431, 0.878431, 0.878431, 1, 0.878431, 0.878431, 0.878431, 1)
+colors = PackedColorArray(0.360784, 0.803922, 0.152941, 1, 0.6, 0.945098, 0.254902, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_mxd0d"]
 gradient = SubResource("Gradient_obal6")
@@ -140,11 +140,11 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(64, 64)
-color = Color(0.568627, 0.568627, 0.568627, 1)
+color = Color(0.907099, 0.914783, 0.908941, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
-autoplay = "RESET"
 libraries = {
-"": SubResource("AnimationLibrary_8msef")
+&"": SubResource("AnimationLibrary_8msef")
 }
+autoplay = "RESET"

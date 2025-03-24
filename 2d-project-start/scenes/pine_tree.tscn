@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxfb4hs38s462"]
+[gd_scene load_steps=5 format=3 uid="uid://dxfb4hs38s462"]
 
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="1_gltu7"]
+[ext_resource type="Script" uid="uid://dxti426goliky" path="res://scripts/pine_tree.gd" id="1_scnqp"]
 [ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_iuyp8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gltu7"]
@@ -8,6 +9,8 @@ radius = 17.0
 height = 34.0
 
 [node name="PineTree" type="StaticBody2D"]
+collision_layer = 5
+script = ExtResource("1_scnqp")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
 modulate = Color(0.929412, 0.898039, 0.913725, 0.376471)

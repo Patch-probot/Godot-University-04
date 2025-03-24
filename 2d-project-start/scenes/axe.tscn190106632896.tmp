@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://thm36imx6ymp"]
+
+[ext_resource type="Script" uid="uid://du8tpk5nqlwv8" path="res://scripts/axe.gd" id="1_725vr"]
+[ext_resource type="Texture2D" uid="uid://cphx7jrgj7vvf" path="res://axe/axe.png" id="1_odgf8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_725vr"]
+radius = 250.0
+
+[node name="Axe" type="Area2D"]
+z_index = 1
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_725vr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_725vr")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="WeaponPivot"]
+rotation = 1.5708
+scale = Vector2(0.180718, 0.180718)
+texture = ExtResource("1_odgf8")
+
+[node name="RayCast2D" type="RayCast2D" parent="WeaponPivot"]
+rotation = -1.5708
+target_position = Vector2(0, 250)
+collision_mask = 4
